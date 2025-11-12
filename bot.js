@@ -105,14 +105,7 @@ async function handleLead(data) {
       { parse_mode: "Markdown" },
     );
 
-    // Send brochure (PDF or image)
-    await bot.sendDocument(chatId, fs.createReadStream("brochure.pdf"));
-
-    // Send email to admin
-    await sendEmailToAdmin(data);
-  } catch (err) {
-    bot.sendMessage(chatId, `❌ Error:\n${err.message}`);
-  }
+    // Send brochure (PDF or image
 }
 
 async function sendEmailToAdmin(data) {
@@ -145,3 +138,4 @@ User ID: ${data.userId}
 
 bot.on("polling_error", (err) => console.error("Polling error:", err));
 console.log("✅ Bot is running...");
+
